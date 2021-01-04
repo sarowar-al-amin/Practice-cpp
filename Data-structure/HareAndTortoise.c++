@@ -35,6 +35,30 @@ void insert(int data){
     
 }
 
+
+void makingLoop(int count){
+    HareAndTortoise* temp = new HareAndTortoise;
+    temp = head;
+    int point = 0;
+    while (point < count)
+    {
+        /* code */
+        temp = temp->pointer;
+        point++;
+    }
+    loopPoint = temp;
+    temp = head;
+    while (temp->pointer != NULL)
+    {
+        /* code */
+        temp = temp->pointer;
+    }
+
+    temp->pointer = loopPoint;
+    
+    
+}
+
 void print(){
     HareAndTortoise* temp = new HareAndTortoise;
     temp = head;
@@ -55,8 +79,8 @@ int main(){
 
     head = NULL;
 
-    // insert(5);
-    // insert(10);
-    // print();
+    insert(5);
+    insert(10);
+    print();
     return 0;
 }
